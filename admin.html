@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin • Planet das Galáxias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/admin.css" />
+  <link rel="icon" type="image/png" href="./assets/img/logo.png" />
+</head>
+<body>
+  <section id="loginScreen" class="login-screen">
+    <form id="loginForm" class="login-card"><div class="brand big"><img class="brand-logo" src="./assets/img/logo.png" alt="Planet das Galáxias"></div><p>Painel Administrativo</p><label>Login<input id="loginUser" value="planet" autocomplete="username" required></label><label>Senha<input id="loginPassword" type="password" autocomplete="current-password" required></label><button class="btn gold" type="submit">Entrar no painel</button><p id="loginError" class="error"></p><a href="./index.html">← Voltar para o site</a></form>
+  </section>
+
+  <div id="adminApp" class="admin-shell hidden">
+    <aside class="sidebar"><div class="brand"><img class="brand-logo" src="./assets/img/logo.png" alt="Planet das Galáxias"><div><small>Painel administrativo</small></div></div><nav id="adminNav"><button class="active" data-view="dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>Dashboard</span></button><button data-view="orders"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span>Pedidos</span></button><button data-view="products"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a8 6 0 0 1 16 0z"/><path d="M3 15h18"/><path d="M5 18.5h14a2 2 0 0 0 0-3.5"/></svg><span>Produtos</span></button><button data-view="categories"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>Categorias</span></button><button data-view="delivery"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="10" rx="1"/><path d="M15 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><span>Bairros e taxas</span></button><button data-view="customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><span>Clientes</span></button><button data-view="analytics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 17V9M13 17V5M18 17v-6"/></svg><span>Relatórios</span></button><button data-view="settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg><span>Configurações</span></button></nav><div class="plan-card"><small>Loja</small><strong>Todos os dias</strong><span>18h às 03h · (21) 97531-0020</span><i></i></div><button id="logoutBtn" class="logout">Sair</button></aside>
+    <main class="admin-main">
+      <header class="admin-top"><img class="top-logo" src="./assets/img/logo.png" alt="Planet das Galáxias"><div><h2 id="welcomeTitle">Bem-vindo de volta, Admin</h2><p id="todayText"></p></div><div class="admin-actions"><label class="searchbox"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input id="globalSearch" placeholder="Buscar produto..."></label><button class="bell" data-goto="orders" aria-label="Pedidos pendentes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><b id="bellCount">0</b></button><span class="avatar" style="display:grid;place-items:center;border-radius:50%;background:#ffc61a;color:#000;font-weight:800;border:0">P</span><button type="button" class="top-logout" onclick="document.getElementById(\'logoutBtn\').click()">Sair</button></div></header>
+
+      <section id="view-dashboard" class="view active">
+        <div id="statsGrid" class="stats-grid"></div>
+        <div class="dash-grid"><div class="dash-left">
+          <article class="panel"><div class="panel-head"><h3>Crescimento de vendas</h3><div class="chart-tools"><span class="chip">Vendas</span><select id="chartPeriod"><option value="7">Últimos 7 dias</option><option value="30">Últimos 30 dias</option></select></div></div><canvas id="revenueChart" height="130"></canvas></article>
+          <article class="panel table-wrap"><div class="panel-head pad"><h3>Pedidos recentes</h3><button class="link-btn" data-goto="orders">Ver todos</button></div><div id="recentOrders"></div></article>
+        </div><div class="dash-right">
+          <article class="panel"><div class="panel-head"><h3>Localização da loja</h3></div><div style="padding:0 20px 20px;display:grid;gap:8px"><strong>Planet das Galáxias Bento Ribeiro</strong><span>Rua Jurubaiba, 615 - Honório Gurgel<br>Rio de Janeiro/RJ</span><span>Horário: 18:00 - 03:00 · Entrega: 15min - 1h · Retirada: 30min</span><span>WhatsApp: (21) 97531-0020</span><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Rua+Jurubaiba+615+Honório+Gurgel+Rio+de+Janeiro+RJ" target="_blank" rel="noopener">Ver no mapa</a></div></article>
+          <article class="panel"><div class="panel-head"><h3>Pedidos por status</h3></div><div id="statusDonut" class="donut-wrap"></div></article>
+          <article class="panel"><div class="panel-head"><h3>Histórico de pedidos</h3><button class="link-btn" data-goto="orders">Ver tudo</button></div><div id="orderHistory" class="history"></div></article>
+        </div></div>
+      </section>
+
+      <section id="view-orders" class="view"><div class="view-head"><div><h2>Pedidos</h2><p>Gerencie o andamento dos pedidos em tempo real.</p></div><button id="refreshOrders" class="btn ghost">Atualizar</button></div><div id="ordersTable" class="panel table-wrap"></div></section>
+
+      <section id="view-products" class="view"><div class="view-head"><div><h2>Produtos</h2><p>Adicione, edite, organize e desative itens do cardápio.</p></div><button id="newProductBtn" class="btn gold">+ Novo produto</button></div><div class="toolbar"><select id="productCategoryFilter"><option value="">Todas as categorias</option></select><input id="productSearch" placeholder="Buscar produto"></div><div id="productsTable" class="panel table-wrap"></div></section>
+
+      <section id="view-categories" class="view"><div class="view-head"><div><h2>Categorias</h2><p>Defina ordem, nome e visibilidade.</p></div><button id="newCategoryBtn" class="btn gold">+ Nova categoria</button></div><div id="categoriesTable" class="panel table-wrap"></div></section>
+
+      <section id="view-delivery" class="view"><div class="view-head"><div><h2>Bairros e taxas</h2><p>Cadastre os bairros que você entrega e o valor de cada um. Escreva o nome igual ao bairro do CEP (ex.: Copacabana) para o site reconhecer sozinho.</p></div><button id="newZoneBtn" class="btn gold">+ Novo bairro</button></div><div id="zonesTable" class="panel table-wrap"></div></section>
+
+      <section id="view-customers" class="view"><div class="view-head"><div><h2>Clientes</h2><p>Resumo dos clientes que fizeram pedidos.</p></div></div><div id="customersTable" class="panel table-wrap"></div></section>
+
+      <section id="view-analytics" class="view"><div class="view-head"><div><h2>Relatórios</h2><p>Indicadores de vendas e produtos mais pedidos.</p></div></div><div class="dashboard-grid"><article class="panel wide"><h3>Produtos mais vendidos</h3><div id="topProducts"></div></article><article class="panel"><h3>Resumo</h3><div id="analyticsSummary"></div></article></div></section>
+
+      <section id="view-settings" class="view"><div class="view-head"><div><h2>Configurações</h2><p>Informações gerais do site e formas de pagamento.</p></div></div><form id="settingsForm" class="panel settings-form"><label>Nome da loja<input name="store_name"></label><label>Telefone / WhatsApp<input name="phone"></label><label>Horário de funcionamento<input name="opening_hours"></label><label>Pedido mínimo (R$)<input name="minimum_order" type="number" step="0.01"></label><label style="display:none"><input name="allow_pickup" type="checkbox"> Permitir retirada no local</label><label><input name="allow_cash" type="checkbox"> Dinheiro</label><label><input name="allow_pix" type="checkbox"> Pix</label><label><input name="allow_card" type="checkbox"> Cartão</label><label class="full">Mensagem do topo<textarea name="hero_subtitle" rows="3"></textarea></label><button class="btn gold" type="submit">Salvar configurações</button><p id="settingsMessage"></p></form></section>
+    </main>
+  </div>
+
+  <dialog id="entityModal" class="modal"><form id="entityForm" method="dialog"><div class="modal-head"><h3 id="entityTitle">Editar</h3><button type="button" id="closeEntityModal">✕</button></div><div id="entityFields" class="form-grid"></div><input type="hidden" id="entityType"><input type="hidden" id="entityId"><button class="btn gold" type="submit">Salvar</button><p id="entityMessage"></p></form></dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script type="module" src="./assets/js/admin.js"></script>
+</body>
+</html>

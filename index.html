@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <title>Planet das Galáxias — Hambúrguer artesanal em Bento Ribeiro</title>
+  <meta name="description" content="Peça online no Planet das Galáxias: hambúrguer artesanal, desfiados, combos, porções e bebidas com entrega em Bento Ribeiro e região. 18:00 - 03:00.">
+  <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Planet das Galáxias — Hambúrguer artesanal em Bento Ribeiro">
+  <meta property="og:description" content="Hambúrguer artesanal, desfiados, combos e porções. Faça seu pedido online.">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Planet das Galáxias","servesCuisine":["Hambúrguer"],"telephone":"+5521975310020","openingHours":"Mo-Su 18:00-03:00","address":"Rua Jurubaiba 615, Honório Gurgel, Rio de Janeiro/RJ","image":"./assets/img/planet/burger.png","sameAs":["https://www.instagram.com/planetdasgalaxias"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./assets/img/logo.png" />
+  <link rel="stylesheet" href="./assets/css/site.css" />
+  <link rel="stylesheet" href="./assets/css/planet.css" />
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#inicio" aria-label="Planet das Galáxias"><img class="brand-logo" src="./assets/img/logo.png" alt="Planet das Galáxias"></a>
+    <nav>
+      <a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#avaliacoes">Avaliações</a><a href="#acompanhar">Pedidos</a><a href="#contato">Sobre</a>
+    </nav>
+    <div class="top-actions">
+      <a id="adminPanelBtn" class="admin-panel-btn hidden" href="./admin.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span><span class="hide-sm">Painel </span>admin</span></a>
+      <button id="accountBtn" class="account-btn" type="button">Entrar</button>
+      <button id="menuBtn" class="icon-btn menu-btn" aria-label="Abrir menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button id="cartBtn" class="icon-btn cart-btn" aria-label="Abrir carrinho">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H6"/></svg>
+        <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="planet-hero">
+      <div class="ph-text">
+        <span class="ph-kicker">Desfiado das Galáxias</span>
+        <h1>Hambúrgueres especiais com carnes desfiadas super suculentas, combinações exclusivas e <span>muito sabor</span> em cada mordida.</h1>
+        <p>Uma experiência fora desse mundo.</p>
+        <div class="ph-cta"><a class="btn primary" href="#cardapio">Ver cardápio →</a><span id="storeBadge" class="store-badge"></span></div>
+        <p class="ph-info">Entrega: 15min - 1h · Retirada: 30min · <span data-hours></span></p>
+        <p class="hero-account" data-needs-account>🔒 Para fazer pedidos é preciso <a href="#" data-open-auth="criar">criar sua conta grátis</a>.</p>
+      </div>
+      <img class="ph-burger" src="./assets/img/planet/burger.png" alt="Hambúrguer desfiado das Galáxias" fetchpriority="high">
+    </section>
+
+    <div class="cat-tiles">
+      <button type="button" class="cat-tile" data-k="artesanal"><img src="./assets/img/planet/ic-burger.png" alt="">Burguers<br>Artesanais</button>
+      <button type="button" class="cat-tile" data-k="combo"><img src="./assets/img/planet/ic-combo.png" alt="">Combos</button>
+      <button type="button" class="cat-tile" data-k="entradas"><img src="./assets/img/planet/ic-entrada.png" alt="">Entradas</button>
+      <button type="button" class="cat-tile" data-k="vegetariana"><img src="./assets/img/planet/ic-veg.png" alt="">Vegetariano</button>
+      <button type="button" class="cat-tile" data-k="bebidas"><img src="./assets/img/planet/ic-bebida.png" alt="">Bebidas</button>
+    </div>
+
+    <section id="cardapio" class="section">
+      <div class="section-head"><div><h2>Nosso <span class="accent">cardápio</span></h2></div><p>Delivery e retirada · Rua Jurubaiba 615 - Honório Gurgel</p></div>
+      <div class="account-banner" data-needs-account><div><strong>Crie sua conta para fazer o pedido</strong><span>Leva 1 minuto: nome, CPF, WhatsApp e e-mail. Depois é só escolher e pedir.</span></div><div class="ab-actions"><button type="button" class="btn primary" data-open-auth="criar">Criar conta</button><button type="button" class="btn ghost" data-open-auth="entrar">Já tenho conta</button></div></div>
+      <div id="categoryGrid" class="category-tabs"></div>
+      <div id="productsArea" class="products-area">
+        <div id="productsGrid" class="menu-grid"></div>
+      </div>
+    </section>
+
+    <section id="avaliacoes" class="section alt">
+      <div class="section-head"><div><span class="eyebrow">AVALIAÇÕES</span><h2>O que os clientes dizem</h2><p>Comentários de quem já pediu no Planet das Galáxias.</p></div><div class="rev-actions"><div id="revSummary" class="rev-summary"></div><button type="button" id="revBtn" class="btn ghost">Avaliar um lanche</button></div></div>
+      <div id="revGrid" class="rev-grid"></div>
+    </section>
+
+    <section id="acompanhar" class="section">
+      <div class="track-card">
+        <div><span class="eyebrow">ACOMPANHE SEU PEDIDO</span><h2>Consulte o status</h2><p>Digite o código do pedido e o telefone usado na compra.</p></div>
+        <form id="trackForm" class="inline-form"><input id="trackCode" placeholder="Ex.: SS-AB12CD" required><input id="trackPhone" type="tel" inputmode="tel" placeholder="Telefone" required><button class="btn primary" type="submit">Consultar</button></form>
+        <div id="trackResult" class="track-result"></div>
+      </div>
+    </section>
+
+    <section id="contato" class="section contact">
+      <div>
+        <span class="eyebrow">CONTATO</span><h2>Fale com a gente</h2>
+        <p class="contact-line">WhatsApp: <a data-phone data-wa-link href="#"></a></p>
+        <a class="btn primary wa-btn" data-wa href="#">Chamar no WhatsApp</a>
+        <a class="btn ghost ig-btn" href="https://www.instagram.com/planetdasgalaxias" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Siga no Instagram @planetdasgalaxias</a>
+      </div>
+      <div class="loc-card"><h4>Localização</h4><p><strong>Planet das Galáxias Bento Ribeiro</strong><br>Rua Jurubaiba, 615 - Honório Gurgel<br>Rio de Janeiro/RJ</p><p>Horário: <span data-hours></span><br>Entrega: 15min - 1h · Retirada: 30min</p><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Rua+Jurubaiba+615+Honório+Gurgel+Rio+de+Janeiro+RJ" target="_blank" rel="noopener">Ver no mapa</a><iframe class="loc-map" title="Mapa da loja" loading="lazy" src="https://www.google.com/maps?q=Rua+Jurubaiba+615+Honório+Gurgel+Rio+de+Janeiro+RJ&output=embed"></iframe><a class="admin-small" href="./admin.html">Área da loja</a></div>
+    </section>
+    <section id="faq" class="section"><h2>Dúvidas frequentes</h2><div class="faq-grid"><article><h4>Como funciona a entrega?</h4><p>A taxa depende do seu bairro. Ela aparece ao informar o CEP ou escolher a região, antes de você confirmar o pedido.</p></article><article><h4>Qual o horário de entrega?</h4><p>Entregamos de 18:00 - 03:00.</p></article><article><h4>Preciso criar conta para pedir?</h4><p>Sim. É grátis e leva 1 minuto: nome, CPF, WhatsApp e e-mail. Depois você entra por e-mail, CPF ou WhatsApp.</p></article><article><h4>Como acompanho o pedido?</h4><p>Use o código exibido após finalizar o pedido e o telefone informado no checkout.</p></article></div></section>
+  </main>
+
+  <footer class="site-footer"><strong>Planet das Galáxias</strong><span data-hours></span><a data-wa href="#">WhatsApp <span data-phone></span></a><a href="https://www.instagram.com/planetdasgalaxias" target="_blank" rel="noopener">Instagram @planetdasgalaxias</a><small>© <span id="year"></span> Planet das Galáxias. Todos os direitos reservados.</small></footer>
+
+  <a class="wa-fab" data-wa href="#" aria-label="Chamar no WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
+  <button id="cartBar" class="cart-bar hidden" type="button"><span><b id="cartBarCount">0</b> itens · Ver carrinho</span><strong id="cartBarTotal">R$ 0,00</strong></button>
+
+  <aside id="cartDrawer" class="drawer" aria-hidden="true"><div class="drawer-head"><h3>Seu carrinho</h3><button id="closeCart" class="icon-btn" aria-label="Fechar carrinho">✕</button></div><div id="cartItems" class="cart-items"></div><div class="cart-notice" data-needs-account>Para finalizar o pedido, <button type="button" class="link-line" data-open-auth="criar">crie sua conta</button> ou <button type="button" class="link-line" data-open-auth="entrar">entre</button>.</div><div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div><button id="checkoutBtn" class="btn primary full">Finalizar pedido</button></div></aside>
+  <div id="drawerBackdrop" class="backdrop hidden"></div>
+
+  <dialog id="optionsDialog" class="modal"><div class="opt-wrap">
+    <div class="modal-head"><div><span class="eyebrow">MONTE O SEU</span><h3 id="optTitle"></h3><small id="optBase" class="opt-base"></small></div><button type="button" id="closeOpt" class="icon-btn" aria-label="Fechar">✕</button></div>
+    <div id="optBody"></div>
+    <div class="opt-bar"><p id="optMsg" class="form-message"></p><button type="button" id="optAdd" class="btn primary full">Adicionar</button></div>
+  </div></dialog>
+
+  <dialog id="reviewDialog" class="modal"><form id="reviewForm" method="dialog">
+    <div class="modal-head"><div><span class="eyebrow">AVALIAÇÃO</span><h3>Conte como foi</h3></div><button type="button" id="closeReview" class="icon-btn" aria-label="Fechar">✕</button></div>
+    <div class="form-grid">
+      <div class="full"><div class="rev-label">Sua nota</div><div class="star-input" id="starInput" role="radiogroup" aria-label="Nota de 1 a 5"><button type="button" data-v="1" aria-label="1 estrela">★</button><button type="button" data-v="2" aria-label="2 estrelas">★</button><button type="button" data-v="3" aria-label="3 estrelas">★</button><button type="button" data-v="4" aria-label="4 estrelas">★</button><button type="button" data-v="5" aria-label="5 estrelas">★</button></div></div>
+      <label class="full">Qual lanche? (opcional)<input name="product" list="revProducts" maxlength="80" placeholder="Ex.: X Bacon"></label>
+      <datalist id="revProducts"></datalist>
+      <label class="full">Seu comentário<textarea name="comment" rows="4" minlength="5" maxlength="400" required placeholder="O que você achou do lanche, da entrega, do atendimento..."></textarea></label>
+    </div>
+    <button class="btn primary full" type="submit">Enviar avaliação</button>
+    <p id="reviewMsg" class="form-message"></p>
+  </form></dialog>
+
+  <dialog id="checkoutDialog" class="modal">
+    <form id="checkoutForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">CHECKOUT</span><h3>Finalizar pedido</h3></div><button type="button" id="closeCheckout" class="icon-btn" aria-label="Fechar">✕</button></div>
+      <div class="form-grid">
+        <label>Nome<input name="customer_name" required autocomplete="name"></label>
+        <label>Telefone<input name="customer_phone" type="tel" inputmode="tel" required autocomplete="tel"></label>
+        <input type="hidden" name="delivery_type" id="deliveryType" value="delivery">
+        <label class="full delivery-field">CEP<input name="cep" id="cepInput" inputmode="numeric" maxlength="9" placeholder="00000-000" autocomplete="postal-code"><small id="cepMsg" class="cep-msg"></small></label>
+        <label class="full delivery-field">Endereço<input name="address" autocomplete="street-address"></label>
+        <label class="delivery-field">Número<input name="number"></label>
+        <label class="delivery-field">Complemento<input name="complement"></label>
+        <label class="full delivery-field">Bairro / região<select name="delivery_zone_id" id="deliveryZone"><option value="">Selecione</option></select></label>
+        <label class="full">Forma de pagamento<select name="payment_method" id="paymentMethod"></select></label>
+        <label class="full">Observações<textarea name="notes" rows="3"></textarea></label>
+      </div>
+      <div class="checkout-total"><span>Total estimado</span><strong id="checkoutTotal">R$ 0,00</strong></div>
+      <button class="btn primary full" type="submit">Confirmar pedido</button>
+      <p id="checkoutMessage" class="form-message"></p>
+    </form>
+  </dialog>
+
+
+  <dialog id="authDialog" class="modal"><div style="padding:24px">
+    <div class="modal-head"><div><span class="eyebrow">MINHA CONTA</span><h3>Acesse para pedir</h3></div><button type="button" class="icon-btn" data-close-auth aria-label="Fechar">✕</button></div>
+    <div class="auth-tabs"><button type="button" data-tab="entrar" class="active">Entrar</button><button type="button" data-tab="criar">Criar conta</button></div>
+    <p id="authNote" class="auth-note"></p>
+    <form class="auth-form" data-form="entrar" id="formEntrar"><div class="form-grid"><label class="full">E-mail, CPF ou WhatsApp<input name="login" required autocomplete="username"></label><label class="full">Senha<input name="senha" type="password" required autocomplete="current-password"></label></div><button class="btn primary full" type="submit">Entrar</button><button type="button" class="link-line" data-go="recuperar">Esqueci minha senha</button></form>
+    <form class="auth-form hidden" data-form="criar" id="formCriar"><div class="form-grid"><label class="full">Nome completo<input name="nome" required autocomplete="name"></label><label>CPF<input name="cpf" id="cCpf" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required></label><label>WhatsApp<input name="whatsapp" id="cWa" inputmode="tel" maxlength="15" placeholder="(21) 99999-9999" required autocomplete="tel"></label><label class="full">E-mail<input name="email" type="email" required autocomplete="email"></label><label>Senha<input name="senha" type="password" minlength="8" required autocomplete="new-password"></label><label>Confirmar senha<input name="senha2" type="password" minlength="8" required autocomplete="new-password"></label></div><button class="btn primary full" type="submit">Criar minha conta</button><p class="auth-note" style="font-size:12px;opacity:.8;margin:10px 0 0">Seus dados (nome, CPF, WhatsApp e e-mail) são usados só para o seu cadastro e para entregar seus pedidos. Não compartilhamos com terceiros.</p></form>
+    <form class="auth-form hidden" data-form="recuperar" id="formRecuperar"><div class="form-grid"><label class="full">E-mail, CPF ou WhatsApp da conta<input name="login" required></label></div><button class="btn primary full" type="submit">Enviar link por e-mail</button><button type="button" class="link-line" data-go="entrar">Voltar para o login</button></form>
+    <form class="auth-form hidden" data-form="nova" id="formNova"><div class="form-grid"><label>Nova senha<input name="senha" type="password" minlength="8" required autocomplete="new-password"></label><label>Confirmar senha<input name="senha2" type="password" minlength="8" required autocomplete="new-password"></label></div><button class="btn primary full" type="submit">Salvar nova senha</button></form>
+    <p id="authMsg" class="form-message"></p>
+  </div></dialog>
+
+  <dialog id="contaDialog" class="modal"><form id="contaForm" method="dialog">
+    <div class="modal-head"><div><span class="eyebrow">MINHA CONTA</span><h3>Meus dados e pedidos</h3></div><button type="button" class="icon-btn" data-close-conta aria-label="Fechar">✕</button></div>
+    <p class="conta-ro">CPF: <strong id="contaCpf"></strong> · E-mail: <strong id="contaEmail"></strong></p>
+    <div class="form-grid"><label>Nome<input name="nome" required></label><label>WhatsApp<input name="whatsapp" maxlength="15" required></label><label>CEP<input name="cep" maxlength="9"></label><label>Endereço<input name="address"></label><label>Número<input name="number"></label><label>Complemento<input name="complement"></label></div>
+    <button class="btn primary full" type="submit">Salvar dados</button><p id="contaMsg" class="form-message"></p>
+    <h4>Meus pedidos</h4><div id="contaOrders"></div>
+    <button type="button" id="contaLogout" class="link-line">Sair da conta</button>
+  </form></dialog>
+
+  <script>
+    const tb=document.getElementById('topbar');const nv=document.querySelector('header nav'),mb=document.getElementById('menuBtn');const setMenu=o=>{nv.classList.toggle('open',o);tb.classList.toggle('menu-open',o);mb.setAttribute('aria-expanded',o)};mb.onclick=()=>setMenu(!nv.classList.contains('open'));nv.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));const f=()=>tb.classList.toggle('solid',scrollY>40);f();addEventListener('scroll',f,{passive:true});
+  </script>
+  <script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+  <script type="module" src="./assets/js/site.js"></script>
+<script>
+(()=>{const n=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+document.addEventListener('click',e=>{const t=e.target.closest('[data-k]');if(!t)return;const k=n(t.dataset.k);const tab=[...document.querySelectorAll('.category-tab')].find(b=>n(b.textContent).includes(k));if(tab)tab.click();if(t.tagName==='BUTTON'){e.preventDefault();document.getElementById('cardapio').scrollIntoView({behavior:'smooth'})}})})();
+</script>
+</body>
+</html>

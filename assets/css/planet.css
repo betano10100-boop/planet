@@ -1,0 +1,49 @@
+/* Planet das Galáxias — tema preto e amarelo */
+:root{--y:#ffc61a;--ink:#04060c;--bd:#2a3140}
+body{background:var(--ink);font-family:Poppins,Inter,Arial,sans-serif}
+.topbar,.topbar.solid{background:rgba(4,6,12,.92);backdrop-filter:blur(12px);border-bottom:1px solid #1d2230}
+.brand-logo{height:52px;width:auto;border-radius:0;box-shadow:none;object-fit:contain}
+nav a{color:#fff}nav a:hover{color:var(--y)}
+.account-btn{border-color:#fff;color:#fff}.account-btn:hover{border-color:var(--y);color:var(--y)}
+.cart-btn #cartCount{background:var(--y);color:#000}
+.btn.primary,.add-btn,.category-tab.active{background:var(--y);color:#0a0a0a;font-weight:800;text-transform:uppercase}
+.btn.ghost{border-color:var(--y);color:#fff}
+.category-tab{border-color:var(--bd);background:#070a12}
+.menu-item{background:#070a12;border-color:var(--bd)}.menu-item:hover{border-color:var(--y)}
+.price,.eyebrow,.accent{color:var(--y)}
+.planet-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:20px;min-height:600px;padding:120px 5vw 50px;background:
+ radial-gradient(1.5px 1.5px at 12% 22%,#fff,transparent),radial-gradient(1px 1px at 33% 70%,#fff,transparent),radial-gradient(1.5px 1.5px at 55% 15%,#fff,transparent),radial-gradient(1px 1px at 72% 80%,#fff,transparent),radial-gradient(1.5px 1.5px at 90% 35%,#fff,transparent),radial-gradient(1px 1px at 8% 85%,#fff,transparent),
+ radial-gradient(ellipse at 70% 45%,rgba(255,120,60,.22),transparent 45%),var(--ink)}
+.planet-hero:before{content:"";position:absolute;left:28%;top:12%;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3d78bd,#0c1f3d 58%,#050a14);opacity:.55}
+.planet-hero>*{position:relative}
+.ph-kicker{color:var(--y);font-weight:800;text-transform:uppercase;font-size:clamp(16px,1.6vw,22px)}
+.ph-text h1{margin:6px 0 14px;font-weight:800;text-transform:uppercase;font-size:clamp(24px,3.1vw,46px);line-height:1.06}
+.ph-text h1 span{color:var(--y)}
+.ph-text p{font-size:18px;margin:0 0 20px;max-width:none}
+.ph-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.ph-cta .store-badge{margin:0}
+.ph-text .ph-info{font-size:13px;color:#b9bdc7;margin:16px 0 6px}
+.ph-burger{width:100%;max-width:660px;justify-self:end;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 55%,#000 40%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 55%,#000 40%,transparent 100%)}
+.cat-tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:0 5vw;margin-top:16px}
+.cat-tile{display:flex;align-items:center;justify-content:center;gap:14px;padding:12px 16px;border:1px solid var(--bd);border-radius:10px;background:#070a12;color:#fff;font:600 14px Poppins,sans-serif;text-transform:uppercase;text-align:left;cursor:pointer}
+.cat-tile img{height:46px;mix-blend-mode:lighten}.cat-tile:hover{border-color:var(--y);color:var(--y)}
+.destaques{padding:40px 5vw 10px}
+.dest-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.dest-head h2{margin:0;text-transform:uppercase;font-weight:800;font-size:clamp(22px,2.4vw,32px)}.dest-head h2 span{color:var(--y)}
+.dest-head a{color:var(--y);font-weight:700;font-size:13px;text-transform:uppercase;text-decoration:none}
+.dest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.dest-grid a{display:block;border:1px solid var(--bd);border-radius:8px;overflow:hidden;background:#070a12;color:#fff;text-decoration:none;padding-bottom:12px}
+.dest-grid img{width:100%;display:block}.dest-grid b{display:block;padding:0 14px;text-transform:uppercase;font-size:15px}
+.dest-grid em{display:block;padding:2px 14px 0;color:var(--y);font-style:normal;font-weight:800;font-size:20px}
+.dest-grid a:hover{border-color:var(--y)}
+.loc-card{display:flex;flex-direction:column;gap:10px;align-items:flex-start}.loc-card p{margin:0}
+.loc-map{width:100%;min-height:200px;border:1px solid var(--bd);border-radius:10px;background:#070a12}
+@media(max-width:900px){.planet-hero{grid-template-columns:1fr;padding-top:100px;min-height:0}.planet-hero:before{left:-20%;width:320px;height:320px}.ph-burger{justify-self:center}.cat-tiles{grid-template-columns:repeat(2,1fr)}.cat-tile:last-child{grid-column:span 2}.dest-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.brand-logo{height:36px}.account-btn{padding:8px 14px;font-size:13px}.ph-text h1{font-size:25px}.planet-hero{padding-bottom:30px}.topbar{padding:0 4vw}}
+@media(max-width:480px){.cat-tile{font-size:12px;padding:10px;gap:8px}.cat-tile img{height:36px}}
+
+/* Botão do painel administrativo (aparece só para o admin logado) */
+.admin-panel-btn{display:inline-flex;align-items:center;gap:7px;background:#ffc61a;color:#000;border:1.5px solid #ffc61a;font:800 14px Poppins,sans-serif;padding:10px 18px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:transform .2s ease,box-shadow .25s ease}
+.admin-panel-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,198,26,.28)}
+.admin-panel-btn.hidden{display:none}
+@media(max-width:900px){.admin-panel-btn{font-size:12px;padding:9px 12px}}
+@media(max-width:700px){.admin-panel-btn svg{display:none}}
